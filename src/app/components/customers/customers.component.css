@@ -1,0 +1,26 @@
+.noTH {
+  width: 3rem;
+}
+.firstNameTD {
+  width: 8rem;
+}
+.lastNameTD {
+  width: 8rem;
+}
+.phoneTD {
+  width: 9rem;
+}
+.emailTD {
+  width: 4rem;
+}
+
+.actions {
+  width: 6rem;
+}
+
+#header {
+  box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+#bgColor {
+  background-color: #ccc;
+}

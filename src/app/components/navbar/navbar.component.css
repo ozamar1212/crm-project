@@ -1,0 +1,17 @@
+.logoImg {
+  width: 90px;
+  height: 50px;
+}
+#logOut:hover {
+  font-size: 19px;
+  color: #dc3545 !important;
+  transition: all 0.2s ease-in-out 0.1s;
+}
+
+#logoSize:hover {
+  font-size: 22px;
+  transition: all 0.1s ease-in-out 0.1s;
+}
+#navColor {
+  background-color: #ccc !important;
+}

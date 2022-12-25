@@ -1,0 +1,26 @@
+.loginBG {
+  background-color: rgba(204, 204, 204, 0.5);
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #cccccc 20%,
+      #cccccc 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #cccccc 20%,
+        #cccccc 80%,
+        transparent 80%,
+        transparent
+      )
+      12.5px 12.5px,
+    linear-gradient(#666 1px, transparent 1px) 0 -0.5px,
+    linear-gradient(90deg, #666 1px, #cccccc 1px) -0.5px 0;
+  background-size: 25px 25px, 25px 25px, 12.5px 12.5px, 12.5px 12.5px;
+}
+#background {
+  background-color: rgba(0, 0, 0, 0.75);
+}

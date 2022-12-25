@@ -1,0 +1,43 @@
+<!-- adding navBars to contact -->
+
+<app-navbar></app-navbar>
+<div id="bgColor" class="d-flex">
+  <app-sidebar></app-sidebar>
+  <div class="w-100 container text-light">
+    <div id="header" class="bg-secondary rounded mt-2 rounded py-2">
+      <h3 class="ms-4 "><i class="fa-solid fa-address-book"></i> Contact</h3>
+      <h6 class="ms-4">Company Contact details.</h6>
+    </div>
+
+    <!-- search contact by name -->
+
+    <div class="d-flexd-flex flex-column my-3">
+      <div class="input-group col ">
+        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <div class="form-floating d-flex flex-column">
+          <input name="searchName" [(ngModel)]="searchName" type="text" placeholder="Search by name">
+        </div>
+      </div>
+    </div>
+
+    <!-- contact table -->
+
+    <table class="text-center table table-bordered bg-light shadow-lg p-3 mb-5 bg-body rounded table-hover">
+      <thead class="text-light bg-dark">
+        <tr>
+          <th>Name</th>
+          <th>Email <i class="fa-solid fa-at"></i></th>
+          <th>Date <i class="fa-regular fa-calendar-days"></i></th>
+          <th>Phone <i class="fa-solid fa-phone"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor=" let ca of contactArray |myPipe:searchName:'name'">
+          <td>{{ca.name}}</td>
+          <td>{{ca.email}}</td>
+          <td>{{ca.date}}</td>
+          <td>{{ca.phone}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

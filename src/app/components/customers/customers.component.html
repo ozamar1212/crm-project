@@ -1,0 +1,92 @@
+<!-- adding navBars to customers -->
+<app-navbar></app-navbar>
+<div id="bgColor" class="d-flex">
+  <app-sidebar></app-sidebar>
+  <div class="w-100 container text-light ">
+    <div id="header" class="bg-secondary mt-2 rounded py-2">
+      <h3 class="ms-4 "><i class="fa-solid fa-user-group me-2"></i>Customers</h3>
+      <h6 class="ms-4">Company customers details.</h6>
+    </div>
+
+
+    <!-- Add new customer btn -->
+    <div class="row p-2">
+      <button (click)="AddCustumer()" class="btn btn-dark shadow rounded  ">
+        <i class="fa-solid fa-plus"></i> Add new customer
+      </button>
+    </div>
+
+
+    <!-- search customer by FirstName -->
+
+    <div class="row mb-3 text-dark ">
+      <div class="input-group col">
+        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input name="firstName" [(ngModel)]="firstName" type="text" class="form-control" placeholder="first name">
+
+        <!-- search customer by LastName -->
+
+      </div>
+      <div class="input-group col">
+        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input name="lastName" [(ngModel)]="lastName" type="text" class="form-control" placeholder="last name">
+        <!-- search customer by phone -->
+
+      </div>
+      <div class="input-group col">
+        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <input name="phone" [(ngModel)]="phone" type="text" class="form-control" placeholder="phone number">
+      </div>
+
+    </div>
+    <!-- costomer table -->
+
+    <table class="table text-center table-bordered bg-light shadow-lg p-3 mb-5 bg-body rounded  table-hover">
+      <thead class="bg-dark text-light">
+        <tr>
+          <th class="noTH" scope="col">No.</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider fs-6">
+        <tr
+          *ngFor="let customer of customers | myPipe:firstName:'firstName' |myPipe:lastName:'lastName' |myPipe:phone:'phone';index as i">
+          <td>{{i+1}}</td>
+          <td class="firstNameTD">{{customer.firstName}}</td>
+          <td class="lastNameTD">{{customer.lastName}}</td>
+          <td class="phoneTD">{{customer.phone}}</td>
+          <td class="emailTD">{{customer.email}}</td>
+          <td class="actions">
+            <div>
+              <!-- VIEW CUSTOMER -->
+              <button type="button" (click)="viewCustomer(customer)" class="btn btn-secondary m-1 btn-sm"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Customer">
+          <td><i class="fa-solid fa-eye text-light"></i></td>
+          </button>
+
+          <!-- EDIT CUSTOMER -->
+
+          <button type="button" (click)="editCustomer(customer)" class="btn btn-secondary m-1 btn-sm "
+            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit Customer">
+            <td><i class="fa-solid fa-pen text-light "></i></td>
+          </button>
+
+          <!-- DELETE CUSTOMER -->
+          <button type="button" (click)="deleteCustomer(customer)" class="btn btn-danger m-1 btn-sm "
+            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete Customer">
+            <td><i class="fa-solid fa-trash text-light"></i></td>
+          </button>
+  </div>
+  </td>
+
+
+  </tr>
+  </tbody>
+  </table>
+</div>
+
+</div>

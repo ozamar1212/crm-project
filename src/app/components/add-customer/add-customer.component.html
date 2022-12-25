@@ -1,0 +1,49 @@
+<!-- Add new customer modal -->
+<div class="container">
+  <form class=" p-5" #addForm="ngForm" (ngSubmit)="onSubmit()">
+    <h1 class="text-center display-4 ">Add Customer</h1>
+    <!-- firsName -->
+    <div class="mb-3">
+      <label for="firstName" class="form-label">First Name</label>
+      <input #firsname="ngModel" minlength="2" [(ngModel)]="customer.firstName" required name="firstName" type="text"
+        class="form-control" id="firstName" aria-describedby="emailHelp">
+      <!--small div-->
+      <div class="text-danger" *ngIf="firsname.invalid&&(firsname.touched || firsname.dirty)">
+        First name must contain at least 2 letters.
+      </div>
+    </div>
+
+    <!-- lastName -->
+    <div class="mb-3">
+      <label for="lastName" class="form-label">Last Name</label>
+      <input #lastname="ngModel" minlength="2" [(ngModel)]="customer.lastName" required name="LastName" type="text"
+        class="form-control" id="lastName">
+      <!--small div-->
+      <div class="text-danger" *ngIf="lastname.invalid&&(lastname.touched || lastname.dirty)">
+        Last name must contain at least 2 letters.
+      </div>
+    </div>
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email Address</label>
+      <input #email="ngModel" [(ngModel)]="customer.email" email required name="email" type="email" class="form-control"
+        id="email">
+      <div class="text-danger" *ngIf="email.invalid&&(email.touched || email.dirty)">
+        valid email is required.
+      </div>
+    </div>
+    <!--Phone-->
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input minlength="8" #phone="ngModel" [(ngModel)]="customer.phone" required name="phone" type="text"
+        class="form-control" id="phone">
+      <!--small div-->
+      <div class="text-danger" *ngIf="phone.invalid&&(phone.touched || phone.dirty)">
+        Phone number must contain at least 8 characters.
+      </div>
+    </div>
+    <!-- inner Add customer btn -->
+    <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary w-100">Add</button>
+  </form>
+
+</div>
